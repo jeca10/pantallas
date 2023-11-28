@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel de Imágenes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 1200px;;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 90vw;
+            display: none;
+            position: absolute;
+            object-fit: cover;
+        }
+
+        .carousel img:first-child {
+            display: block;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            margin-top: -20px;
+            cursor: pointer;
+        }
+
+        .carousel-control.left {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #333;
+            left: 0;
+        }
+
+        .carousel-control.right {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #333;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <img src="img/diretv go.png" alt="Imagen 1">
+        <img src="img/neflix.jpg" alt="Imagen 2">
+        <img src="img/disney+.jpg" alt="Imagen 3">
+        <img src="imagen4.jpg" alt="Imagen 4">
+
+        <a href="#" class="carousel-control left">&lt;</a>
+        <a href="#" class="carousel-control right">&gt;</a>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const leftControl = document.querySelector('.carousel-control.left');
+        const rightControl = document.querySelector('.carousel-control.right');
+
+        leftControl.addEventListener('click', () => {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            images[currentIndex].style.display = 'block';
+        });
+
+        rightControl.addEventListener('click', () => {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = 'block';
+        });
+    </script>
+</body>
+</html>

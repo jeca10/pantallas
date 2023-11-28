@@ -1,4 +1,6 @@
 /* global */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Vina+Sans&display=swap');
+
 *::after,
 *::before,
 *{
@@ -40,8 +42,12 @@ header{
 h1{
     display: flex;
     margin: 8px;
+    
 }
 
+h2{
+    font-family: 'Bebas Neue', sans-serif;
+}
 
 /* carousel */
 
@@ -52,10 +58,10 @@ h1{
     position: relative;
 }
 
-#disney-slide{
-    background-image: url(".\img\diretv go.png");
+/* #disney-slide{
+    background-image: url(/disney+.jpg);
     background-size: cover;
-}
+} */
 
 /* .carousel img{
     width: 100%;
@@ -64,7 +70,7 @@ h1{
     position: absolute;
     object-fit: cover;
 } */
-
+/* 
 .carousel img:first.child{
     display: block;
 }
@@ -76,4 +82,49 @@ h1{
     height: 0;
     margin-top: -20px;
     cursor: pointer;
+} */
+
+
+
+
+/* Main  */
+
+
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    
+}
+
+.item{
+    border-radius: 10px;
+    
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px  rgb(0, 0, 0, 0.20);
+}
+
+.info-product{
+    padding: 15px 30px;
+    
+}
+
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0 ;
+    transition: all .4s;
+}
+
+.item figure{
+    overflow: hidden;
+
+}
+
+.item:hover{
+    transform: scale(1.2);
+
 }
